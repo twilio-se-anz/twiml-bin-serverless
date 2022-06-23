@@ -14,7 +14,7 @@ twilio plugins:install @twilio-labs/plugin-serverless
 
 ### Environment variables
 
-This project requires some environment variables to be set. To keep your tokens and secrets secure, make sure to not commit the `.env` file in git. 
+This project does not need environment variables to be set. To keep your tokens and secrets secure, make sure to not commit the `.env` file in git. 
 
 ### Function Parameters
 
@@ -40,7 +40,7 @@ Syntax of TwiML is summarised in [this article](https://support.twilio.com/hc/en
 twilio serverless:start
 ```
 
-2. Using Postman or Curl and `GET` http://localhost:3000/twiml-bin and provide the required parameters. 
+2. Using Postman or Curl with `GET` http://localhost:3000/twiml-bin and provide the required parameters. 
 
 
 ## Deploying
@@ -52,3 +52,11 @@ With the [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart):
 ```
 twilio serverless:deploy
 ```
+## Configuration 
+
+You can enable your TwiML Bin for incoming communications from the **Active Numbers** page in [Console](https://www.twilio.com/console/phone-numbers/incoming). Click the desired phone number to modify, and then follow the below steps for each communication type.
+
+* Configuration with : `Webhook, Twiml Bin, Function, Studio Flow, Proxy Service`
+* A Call/Message comes in: `Webhook`
+* URL: `https://twiml-bin-<digits>.twil.io/twiml-bin?template=simple-sms`
+* Method: `POST` or `GET`
